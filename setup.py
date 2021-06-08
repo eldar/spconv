@@ -59,6 +59,14 @@ class CMakeBuild(build_ext):
             cmake_args += ['-DSPCONV_BuildCUDA=OFF']
         else:
             cuda_flags = ["\"--expt-relaxed-constexpr\""]
+            cuda_flags += [
+                '-gencode=arch=compute_50,code=sm_50',
+                '-gencode=arch=compute_52,code=sm_52',
+                '-gencode=arch=compute_60,code=sm_60',
+                '-gencode=arch=compute_61,code=sm_61',
+                '-gencode=arch=compute_70,code=sm_70',
+                '-gencode=arch=compute_75,code=sm_75',
+                '-gencode=arch=compute_75,code=compute_75']
             # must add following flags to use at::Half
             # but will remove raw half operators.
             cuda_flags += ["-D__CUDA_NO_HALF_OPERATORS__", "-D__CUDA_NO_HALF_CONVERSIONS__"]
