@@ -13,6 +13,7 @@
 // limitations under the License.
 
 #include <boost/geometry.hpp>
+#include <boost/geometry/geometries/geometries.hpp>
 #include <spconv/nms_functor.h>
 #include <torch/script.h>
 #include <vector>

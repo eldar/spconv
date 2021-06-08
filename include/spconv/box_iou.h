@@ -19,6 +19,7 @@
 // must include pybind11/eigen.h if using eigen matrix as arguments.
 #include <algorithm>
 #include <boost/geometry.hpp>
+#include <boost/geometry/geometries/geometries.hpp>
 #include <pybind11/numpy.h>
 
 namespace spconv {
